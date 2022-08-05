@@ -3,7 +3,7 @@ from PIL import Image, ImageColor
 
 def generate():
     # Get base image type input
-    material_icon_type = input('Select Material Icon Set [METALLIC, SHINY, DULL]: ')
+    material_icon_type = input('Select Material Icon Set [METALLIC, SHINY, DULL, ONE, GT, brick]: ')
 
     if material_icon_type.casefold() == 'M'.casefold():
         material_icon_type = 'METALLIC'
@@ -11,6 +11,14 @@ def generate():
         material_icon_type = 'SHINY'
     elif material_icon_type.casefold() == 'D'.casefold():
         material_icon_type = 'DULL'
+    elif material_icon_type.casefold() == 'O'.casefold():
+        material_icon_type = 'ONE'
+    elif material_icon_type.casefold() == 'O'.casefold():
+        material_icon_type = 'GT6'
+    elif material_icon_type.casefold() == 'G'.casefold():
+        material_icon_type = 'GT6'
+    elif material_icon_type.casefold() == 'b'.casefold():
+        material_icon_type = 'brick'    
 
     if material_icon_type.casefold() == 'METALLIC'.casefold():
         picture = Image.open('resources/base/metallic.png')
@@ -18,6 +26,12 @@ def generate():
         picture = Image.open('resources/base/shiny.png')
     elif material_icon_type.casefold() == "DULL".casefold():
         picture = Image.open('resources/base/dull.png')
+    elif material_icon_type.casefold() == "ONE".casefold():
+        picture = Image.open('resources/base/one.png')
+    elif material_icon_type.casefold() == "GT6".casefold():
+        picture = Image.open('resources/base/gt6.png')	
+    elif material_icon_type.casefold() == "brick".casefold():
+        picture = Image.open('resources/base/brick.png')	        
     else:
         print(f'Invalid Material Icon Set: {material_icon_type}')
         return 0
