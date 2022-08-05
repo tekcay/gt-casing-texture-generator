@@ -1,0 +1,1 @@
+$ convert -background none mold_overlay.png shape.extruder.ring.png -layers flatten shape.mold.ring.png
